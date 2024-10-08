@@ -85,3 +85,9 @@ div {
   background-color: #F64668;
   color:#000
 }
+
+#FlexboxImage {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
