@@ -62,12 +62,14 @@ div {
   flex-direction: row;
   justify-content: space-evenly;
   border: 5px solid blanchedalmond
+  
 }
 .box{
   width: 150px;
   height: 150px;
   font-size: 1em;
   text-align: center;
+  border-radius: 15px;
 }
 #box1{
   background-color: #F64668;
@@ -87,6 +89,8 @@ div {
 }
 
 #FlexboxImage {
+  background-color: #FFFFFF;
+  opacity: 0.6;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
