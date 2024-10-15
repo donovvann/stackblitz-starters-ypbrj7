@@ -94,19 +94,4 @@ div {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-  border-radius: 30px;
-}
-#FlexboxImage2 {
-  background-color: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  margin-top: 6rem;
-  border-radius: 30px;
-}
-#FlexboxImageindex {
-  background-color: #FFFFFF;
-  display: flex;
-  justify-content: center;
-  margin-top: 6rem;
-  border-radius: 30px;
 }
