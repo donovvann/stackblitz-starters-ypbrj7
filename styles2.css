@@ -1,15 +1,16 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: baseline;
     gap: 5%;
 }
 
 .container {
     text-align: center;
     margin-top: auto;
-    background-image: url("images/space1.png");
-    color: #cccccc;
+    background-image: url("images/space1.png"); 
+    width: 100%;
+    color: #ffffff;
     height: 100%;
 }
 
@@ -18,7 +19,7 @@
 }
 
 nav {
-    background-color: #504098;
+    background-color: #4143dd;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: row;
