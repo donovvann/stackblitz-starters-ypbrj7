@@ -1,13 +1,17 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: baseline;
+    justify-content: space-between;
     gap: 5%;
 }
 
+/* #mainpage { 
+  justify-content: left;
+} */
+
 .container {
     text-align: center;
-    margin-top: auto;
+    margin-top: auto; 
     background-image: url("images/space1.png"); 
     width: 100%;
     color: #ffffff;
@@ -15,11 +19,11 @@
 }
 
 #welcome {
-    padding: 5%;
+    padding: 15%;
 }
 
 nav {
-    background-color: #4143dd;
+    background-color: #000000;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: row;
@@ -34,12 +38,13 @@ nav {
   nav a {
     display: inline-block;
     min-width: 9rem;
-    padding: 1rem;
-    border-radius: 0.2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
     border: solid 1px #313131;
     text-align: center;
     text-decoration: none;
     color: hwb(0 100% 0%);
+    margin-left: 0.5rem;
   }
   
   nav a[aria-current='page'] {
@@ -63,4 +68,14 @@ nav {
     padding: 10;
     background-color: #ffffff;
     border: solid 1px #313131;
+  }
+
+  .titlewelcome {
+    font-weight: 200;
+    font-size: 5rem;
+  }
+ 
+  .box1start {
+    display: flex;
+    justify-content: flex-end;
   }
