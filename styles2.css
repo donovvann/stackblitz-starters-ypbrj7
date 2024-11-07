@@ -79,3 +79,8 @@ nav {
     display: flex;
     justify-content: flex-end;
   }
+
+  .form {
+    padding: 1rem;
+    gap: 1rem;
+  }
