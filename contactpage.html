@@ -10,10 +10,30 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="containercontact">
         <div class="buttongoback">
             <a href="index.html">Go back</a> 
         </div>
+        <form class="form">
+            <label>
+                Name: <input type="text" required />
+            </label>
+            <label> 
+                Message: <textarea style="width:80%"></textarea>
+            </label>
+            <label>
+                Email: <input type="text" name="email" id="email" required>
+            </label>
+            <label>
+                Opt in to emails <input type="checkbox" />
+            </label>
+            <input type="submit" style="width:20%" />
+        </form>
+        <script>
+            function formSubmission() {
+                alert("form successfully submitted");
+            }
+        </script>
     </div>
 </body>
 

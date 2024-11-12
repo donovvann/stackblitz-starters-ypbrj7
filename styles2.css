@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .navbar {
     display: flex;
     flex-direction: row;
@@ -16,6 +19,14 @@
     width: 100%;
     color: #ffffff;
     height: 100%;
+}
+.containercontact {
+  text-align: start;
+  margin-top: auto; 
+  background-image: url("images/space1.png"); 
+  width: 100%;
+  color: #ffffff;
+  height: 100%;
 }
 
 #welcome {
@@ -78,4 +89,11 @@ nav {
   .box1start {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .form {
+    flex-direction: column;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
   }
