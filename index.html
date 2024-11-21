@@ -39,6 +39,27 @@
             <a href="teams.html">Go to Teams</a> 
         </div> -->
     </div>
+    <div>
+        <label>Dark Mode
+            <input type="checkbox" onchange="toggleDarkMode()">
+        </label>
+        <script>
+            let isDarkMode = false;
+            const body = document.body
+
+            const toggleDarkMode = () => {
+                console.log("Using dark mode: " + isDarkMode);
+                isDarkMode = !isDarkMode
+                if (isDarkMode) {
+                    body.style["backgroundColor"] = "black";
+                    body.style["color"] = "blue";
+                } else {
+                    body.style["backgroundColor"] = "blue";
+                    body.style["color"] = "black";
+                }
+            }
+        </script>
+    </div>
 </body>
 
 </html>
