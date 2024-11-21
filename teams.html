@@ -26,4 +26,52 @@
     </div>
 </body>
 
+<div>Select a type of team:
+    <select id="types">
+        <option value="all">all</option>   
+        <option value="Zordon/Post-Era">Zordon/Post-Era</option> 
+        <option value="Disney">Disney</option> 
+        <option value="Saban">Saban</option> 
+        <option value="Hasbro">Hasbro</option> 
+    </select>
+</div>
+
+<script>
+    const teamType=["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"]
+    const select = document.getElementById("types");
+    teamType.forEach((type) => {
+        option = document.createElement("option");
+        option.value = type;
+        option.type = type;
+        select.appendChild(option);
+    })
+</script>
+<!-- <script>
+    const teamType = ["all", "Zordon/Post-Zordon", "Disney", "New Saban", "Hasbro"];
+    console.log(teamType.length)
+    console.log(teamType[0])
+    console.log(teamType[4])
+</script> -->
+<table id="table">
+    <thead>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Era</b></td>
+            <td><b>Members</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>RPM</b></td>
+            <td><b>Disney</b></td>
+            <td><b>7</b></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    let a = [1, 2, 3]
+    a.forEach((i) => {
+        console.log(i);
+    });
+</script>
 </html>
