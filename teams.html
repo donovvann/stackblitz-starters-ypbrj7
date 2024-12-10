@@ -14,16 +14,89 @@
         <div class="buttongoback">
             <a href="index.html">Go back</a> 
         </div>
-        <div>
-            <img src="images/youtube.webp" width="200px">
-        </div>
-        <div>
-            <img src="images/youtube.webp" width="200px">
-        </div>
-        <div>
-            <img src="images/youtube.webp" width="200px">
-        </div>
     </div>
 </body>
 
+<!-- <div>Select a type of team:
+    <select id="types" onchange="makeTable()"></select>
+</div> -->
+<div>Select a type of team:
+    <select id="types" onchange="makeTable()">
+   <!-- <select id="types"> -->
+    </select>
+</div> 
+
+<script>
+    const teamType=["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"]
+    const select = document.getElementById("types");
+    teamType.forEach((type) => {
+        option = document.createElement("option");
+        option.value = type;
+        option.text = type;
+        select.appendChild(option);
+    })
+</script>
+<!-- <script>
+    const teamType = ["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"];
+    console.log(teamType.length)
+    console.log(teamType[0])
+    console.log(teamType[4])
+</script> -->
+<script>
+    const genretable=[{
+        Name: "RPM",
+        Era: "Disney",
+        Members: 7,
+    }, {
+        Name: "SPD",
+        Era: "Disney",
+        Members: 6,
+    }, {
+        Name: "ZEO",
+        Era: "Zordon/Post-Era",
+        Members: 6,
+    }
+    ];
+    console.log(genretable);
+</script>
+<table id="table">
+    <thead>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Era</b></td>
+            <td><b>Members</b></td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<!-- <script>
+    let a = [1, 2, 3]
+    a.forEach((i) => {
+        console.log(i);
+    });
+    </script> -->
+    <script>
+    const writeTableRow = (table, genretable) => {
+        const newRow = table.insertRow();
+
+        newRow.innerHTML = `<tr id=${genretable.Name}>
+            <td>${genretable.Name}</td>
+            <td>${genretable.Era}</td>
+            <td>${genretable.Members}</td>
+        </tr>`;
+    }
+const makeTable = () => {
+    const table = document.getElementsByTagName("tbody")[0];
+    table.innerHTML = "";
+    if (select.value == "all") {
+        genretable.forEach((genretable)=> { writeTableRow(table, genretable); })
+    } else {
+        console.log(select.value)
+        const filtered = genretable.filter((r) => r.Era == select.value)
+        console.log(filtered);
+        filtered.forEach((r) => writeTableRow(table, r))
+    }
+}
+    makeTable()
+</script>
 </html>

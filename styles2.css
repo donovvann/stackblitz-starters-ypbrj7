@@ -28,6 +28,14 @@
   color: #ffffff;
   height: 100%;
 }
+.uscontainercontact {
+  text-align: start;
+  margin-top: auto; 
+  background-image: url("images/space1.png"); 
+  width: 100%;
+  color: #ffffff;
+  height: 100%;
+}
 
 #welcome {
     padding: 15%;
@@ -97,3 +105,11 @@ nav {
     padding: 1rem;
     gap: 1rem;
   }
+
+#table {
+  padding: 0.5rem;
+}
+
+td {
+  padding: 1rem;
+}
