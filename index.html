@@ -52,15 +52,14 @@
                 console.log("Using dark mode: " + isDarkMode);
                 isDarkMode = !isDarkMode
                 if (isDarkMode) {
-                    body.style["backgroundColor"] = "black";
-                    body.style["color"] = "blue";
-                } else {
-                    body.style["backgroundColor"] = "blue";
-                    body.style["color"] = "black";
-                }
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+            } else {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
             }
-        </script>
+        }
+    </script>
     </div>
 </body>
-
 </html>
