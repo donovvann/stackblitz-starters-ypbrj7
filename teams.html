@@ -1,112 +1,97 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <link rel="icon" href="/images/favicon2.ico">
-    <title>
-        Homepages
-    </title>
+    <title>Teams</title>
     <link rel="stylesheet" href="styles2.css" />
-    </link>
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div id="mainpage">
-          <a href="/" aria-current="page">Main Page</a>
+            <a href="/">Main Page</a>
         </div>
         <div class="box1start">
-          <a href="/teams.html">Teams</a>
-        <a href="/old.html">Old homepage</a>
-        <a href="/contactpage.html">Contact Me</a>
+            <a href="/teams.html" aria-current="page">Teams</a>
+            <a href="/old.html">Old Homepage</a>
+            <a href="/contactpage.html">Contact Me</a>
         </div>
-      </nav>
-    <div class="container">
-        <div class="buttongoback">
-            <a href="index.html">Go back</a> 
-        </div>
+    </nav>
+
+    <!-- Select Dropdown for Filtering Teams -->
+    <div>
+        <p>Select a type of team:</p>
+        <select id="types" onchange="makeTable()"></select>
     </div>
+
+    <!-- Table for Displaying Teams -->
+    <table id="table">
+        <thead>
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Era</b></td>
+                <td><b>Members</b></td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const teamType = ["all", "Saban", "Disney", "Neo Saban"];
+        const select = document.getElementById("types");
+        teamType.forEach((type) => {
+            const option = document.createElement("option");
+            option.value = type;
+            option.textContent = type;
+            select.appendChild(option);
+        });
+
+        const genretable = [
+            { Name: "Mighty Morphin", Era: "Saban", Members: 6, Link: "teams/mighty.html" },
+            { Name: "Alien", Era: "Saban", Members: 5, Link: "alien.html" },
+            { Name: "ZEO", Era: "Saban", Members: 6, Link: "zeo.html" },
+            { Name: "Turbo", Era: "Saban", Members: 5, Link: "turbo.html" },
+            { Name: "Space", Era: "Saban", Members: 6, Link: "space.html" },
+            { Name: "Galaxy", Era: "Saban", Members: 6, Link: "galaxy.html" },
+            { Name: "Rescue", Era: "Saban", Members: 6, Link: "rescue.html" },
+            { Name: "Wild Force", Era: "Saban", Members: 6, Link: "wild-force.html" },
+            { Name: "Ninja Storm", Era: "Disney", Members: 6, Link: "ninja-storm.html" },
+            { Name: "Dino Thunder", Era: "Disney", Members: 5, Link: "dino-thunder.html" },
+            { Name: "SPD", Era: "Disney", Members: 6, Link: "spd.html" },
+            { Name: "Mystic Force", Era: "Disney", Members: 6, Link: "mystic-force.html" },
+            { Name: "Operation Overdrive", Era: "Disney", Members: 6, Link: "operation-overdrive.html" },
+            { Name: "Jungle Fury", Era: "Disney", Members: 5, Link: "jungle-fury.html" },
+            { Name: "RPM", Era: "Disney", Members: 7, Link: "rpm.html" },
+            { Name: "Samurai", Era: "Neo Saban", Members: 6, Link: "samurai.html" },
+            { Name: "Megaforce", Era: "Neo Saban", Members: 5, Link: "megaforce.html" },
+            { Name: "Super Megaforce", Era: "Neo Saban", Members: 6, Link: "super-megaforce.html" }
+        ];
+
+        const writeTableRow = (table, team) => {
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td><a href="/teams/${team.Link}">${team.Name}</a></td>
+                <td>${team.Era}</td>
+                <td>${team.Members}</td>
+            `;
+        };
+
+        const makeTable = () => {
+            const tableBody = document.querySelector("#table tbody");
+            tableBody.innerHTML = "";
+
+            const filteredTeams = select.value === "all" 
+                ? genretable 
+                : genretable.filter((team) => team.Era === select.value);
+
+            filteredTeams.forEach((team) => writeTableRow(tableBody, team));
+        };
+
+        makeTable();
+    </script>
 </body>
 
-<!-- <div>Select a type of team:
-    <select id="types" onchange="makeTable()"></select>
-</div> -->
-<div>Select a type of team:
-    <select id="types" onchange="makeTable()">
-   <!-- <select id="types"> -->
-    </select>
-</div> 
-
-<script>
-    const teamType=["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"]
-    const select = document.getElementById("types");
-    teamType.forEach((type) => {
-        option = document.createElement("option");
-        option.value = type;
-        option.text = type;
-        select.appendChild(option);
-    })
-</script>
-<!-- <script>
-    const teamType = ["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"];
-    console.log(teamType.length)
-    console.log(teamType[0])
-    console.log(teamType[4])
-</script> -->
-<script>
-    const genretable=[{
-        Name: "RPM",
-        Era: "Disney",
-        Members: 7,
-    }, {
-        Name: "SPD",
-        Era: "Disney",
-        Members: 6,
-    }, {
-        Name: "ZEO",
-        Era: "Zordon/Post-Era",
-        Members: 6,
-    }
-    ];
-    console.log(genretable);
-</script>
-<table id="table">
-    <thead>
-        <tr>
-            <td><b>Name</b></td>
-            <td><b>Era</b></td>
-            <td><b>Members</b></td>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
-<!-- <script>
-    let a = [1, 2, 3]
-    a.forEach((i) => {
-        console.log(i);
-    });
-    </script> -->
-    <script>
-    const writeTableRow = (table, genretable) => {
-        const newRow = table.insertRow();
-
-        newRow.innerHTML = `<tr id=${genretable.Name}>
-            <td>${genretable.Name}</td>
-            <td>${genretable.Era}</td>
-            <td>${genretable.Members}</td>
-        </tr>`;
-    }
-const makeTable = () => {
-    const table = document.getElementsByTagName("tbody")[0];
-    table.innerHTML = "";
-    if (select.value == "all") {
-        genretable.forEach((genretable)=> { writeTableRow(table, genretable); })
-    } else {
-        console.log(select.value)
-        const filtered = genretable.filter((r) => r.Era == select.value)
-        console.log(filtered);
-        filtered.forEach((r) => writeTableRow(table, r))
-    }
-}
-    makeTable()
-</script>
 </html>
+

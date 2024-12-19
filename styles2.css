@@ -1,20 +1,46 @@
 * {
   box-sizing: border-box;
 }
+/* Navbar Styling */
 .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000; 
+  padding: 1rem;
+  font-family: 'Times New Roman', Times, serif;
 }
+
+.navbar a {
+  color: #fff; 
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #555; 
+}
+
+.navbar .box1start {
+  display: flex;
+  gap: 1rem; 
+}
+
 
 /* #mainpage { 
   justify-content: left;
 } */
 
 .container {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-top: auto; 
+    margin: 0 auto;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-start;
     /* background-image: url("images/space1.png");  */
     width: 100%;
     color: #000000;
@@ -69,7 +95,7 @@ nav {
     margin-left: 0.5rem;
   }
   
-  nav a[aria-current='page'] {
+  nav a[aria-current="page"] {
     color: #000;
     background-color: #ffffff;
   }
