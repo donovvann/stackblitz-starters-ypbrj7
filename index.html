@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon2.ico">
     <title>
         Homepage
@@ -10,6 +12,7 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
       <div id="mainpage">
         <a href="/" aria-current="page">Main Page</a>
@@ -22,6 +25,8 @@
       <!-- <a href="/teams.html">Teams</a> 
       <a href="/old.html">Old homepage</a> -->
     </nav>
+
+    <!-- Welcome Section -->
     <div class="container">
         <div id="welcome">
             <h1 class="titlewelcome">WELCOME</h1>
@@ -41,17 +46,18 @@
     </div>
 </body>
 
-</html>
-     <input type="checkbox" onchange="toggleDarkMode()">
-        </label>
-        <script>
-            let isDarkMode = false;
-            const body = document.body
+    <!-- Dark Mode Toggle -->
+    <label for="darkModeToggle">
+        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()"> Enable Dark Mode
+    </label>
 
-            const toggleDarkMode = () => {
-                console.log("Using dark mode: " + isDarkMode);
-                isDarkMode = !isDarkMode
-                if (isDarkMode) {
+    <script>
+        let isDarkMode = false;
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            const body = document.body;
+            if (isDarkMode) {
                 body.style.backgroundColor = "black";
                 body.style.color = "white";
             } else {
@@ -60,6 +66,5 @@
             }
         }
     </script>
-    </div>
 </body>
 </html>

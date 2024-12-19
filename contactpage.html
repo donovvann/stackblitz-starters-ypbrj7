@@ -1,56 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon2.ico">
-    <title>
-        Contact Me
-    </title>
-    <link rel="stylesheet" href="styles2.css" />
-    </link>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 
 <body>
-    <!-- <div class="uscontactcontainer">
-        <div class="buttongoback">
-            <a href="index.html">Go back</a> 
+    <nav class="navbar">
+        <div id="mainpage">
+          <a href="/" aria-current="page">Main Page</a>
         </div>
-        <div id="welcome">
-            <h2 class="titlewelcome">Contact Us</h2>
-            <div>
-                <p> We'd love your support!</p>
-            </div> -->
-    </div>
+        <div class="box1start">
+        <a href="/teams.html">Teams</a>
+        <a href="/old.html">Old homepage</a>
+        <a href="/contactpage.html">Contact Me</a>
+        </div>
+      </nav>
     <div class="containercontact">
         <div class="uscontactcontainer">
-            <div class="buttongoback">
-                <a href="index.html">Go back</a> 
-            </div>
+            <!-- <div class="buttongoback"> -->
+                <!-- <a href="index.html">Go back</a> -->
+            <!-- </div> -->
+
             <div id="welcome">
                 <h2 class="titlewelcome">Contact Us</h2>
-                <div>
-                    <p> We'd love your support!</p>
-                </div>
-        <form class="form">
-            <label>
-                Name: <input type="text" required />
-            </label>
-            <label> 
-                Message: <textarea style="width:80%"></textarea>
-            </label>
-            <label>
-                Email: <input type="text" name="email" id="email" required>
-            </label>
-            <label>
-                Opt in to emails <input type="checkbox" />
-            </label>
-            <input type="submit" style="width:20%" />
-        </form>
-        <script>
-            function formSubmission() {
-                alert("form successfully submitted");
-            }
-        </script>
+                <p>We'd love your support!</p>
+            </div>
+
+            <form class="form" onsubmit="return formSubmission()">
+                <label for="name">
+                    Name: 
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </label>
+                <label for="message">
+                    Message: 
+                    <textarea id="message" name="message" style="width:80%" placeholder="Your Message"></textarea>
+                </label>
+                <label for="email">
+                    Email: 
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </label>
+                <label for="optin">
+                    Opt in to emails:
+                    <input type="checkbox" id="optin" name="optin">
+                </label>
+                <button type="submit" style="width:20%">Submit</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+        function formSubmission() {
+            alert("Form successfully submitted!");
+            return false; 
+        }
+    </script>
 </body>
 
 </html>

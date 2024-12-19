@@ -15,26 +15,29 @@
 .container {
     text-align: center;
     margin-top: auto; 
-    background-image: url("images/space1.png"); 
+    /* background-image: url("images/space1.png");  */
     width: 100%;
-    color: #ffffff;
+    color: #000000;
     height: 100%;
 }
 .containercontact {
-  text-align: start;
-  margin-top: auto; 
-  background-image: url("images/space1.png"); 
-  width: 100%;
-  color: #ffffff;
-  height: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 100vh;          
+  text-align: center;
+  /* background-image: url("images/space1.png"); */
+  background-size: cover;
+  color: #000000;
 }
-.uscontainercontact {
-  text-align: start;
-  margin-top: auto; 
-  background-image: url("images/space1.png"); 
-  width: 100%;
-  color: #ffffff;
-  height: 100%;
+
+.uscontactcontainer {
+  /* background-color: rgba(0, 0, 0, 0.8);  */
+  padding: 2rem;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); */
+  max-width: 500px; 
+  width: 100%; 
 }
 
 #welcome {
@@ -99,12 +102,12 @@ nav {
     justify-content: flex-end;
   }
 
-  .form {
-    flex-direction: column;
+  .form label {
     display: flex;
-    padding: 1rem;
-    gap: 1rem;
-  }
+    flex-direction: column;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
 
 #table {
   padding: 0.5rem;
@@ -112,4 +115,20 @@ nav {
 
 td {
   padding: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #dcdcdc;
 }
