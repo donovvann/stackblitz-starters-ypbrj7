@@ -19,7 +19,7 @@
         </div>
     </nav>
 
-    <!-- Select Dropdown for Filtering Teams -->
+
     <div>
         <p>Select a type of team:</p>
         <select id="types" onchange="makeTable()"></select>
@@ -47,32 +47,32 @@
         });
 
         const genretable = [
-            { Name: "Mighty Morphin", Era: "Saban", Members: 6, Link: "teams/mighty.html" },
+            { Name: "Mighty Morphin", Era: "Saban", Members: 6, Link: "mighty.html" },
             { Name: "Alien", Era: "Saban", Members: 5, Link: "alien.html" },
             { Name: "ZEO", Era: "Saban", Members: 6, Link: "zeo.html" },
             { Name: "Turbo", Era: "Saban", Members: 5, Link: "turbo.html" },
             { Name: "Space", Era: "Saban", Members: 6, Link: "space.html" },
             { Name: "Galaxy", Era: "Saban", Members: 6, Link: "galaxy.html" },
             { Name: "Rescue", Era: "Saban", Members: 6, Link: "rescue.html" },
-            { Name: "Wild Force", Era: "Saban", Members: 6, Link: "wild-force.html" },
-            { Name: "Ninja Storm", Era: "Disney", Members: 6, Link: "ninja-storm.html" },
-            { Name: "Dino Thunder", Era: "Disney", Members: 5, Link: "dino-thunder.html" },
+            { Name: "Wild Force", Era: "Saban", Members: 6, Link: "wildforce.html" },
+            { Name: "Ninja Storm", Era: "Disney", Members: 6, Link: "ninjastorm.html" },
+            { Name: "Dino Thunder", Era: "Disney", Members: 5, Link: "dinothunder.html" },
             { Name: "SPD", Era: "Disney", Members: 6, Link: "spd.html" },
-            { Name: "Mystic Force", Era: "Disney", Members: 6, Link: "mystic-force.html" },
-            { Name: "Operation Overdrive", Era: "Disney", Members: 6, Link: "operation-overdrive.html" },
-            { Name: "Jungle Fury", Era: "Disney", Members: 5, Link: "jungle-fury.html" },
+            { Name: "Mystic Force", Era: "Disney", Members: 6, Link: "mysticforce.html" },
+            { Name: "Operation Overdrive", Era: "Disney", Members: 6, Link: "operationoverdrive.html" },
+            { Name: "Jungle Fury", Era: "Disney", Members: 5, Link: "junglefury.html" },
             { Name: "RPM", Era: "Disney", Members: 7, Link: "rpm.html" },
             { Name: "Samurai", Era: "Neo Saban", Members: 6, Link: "samurai.html" },
             { Name: "Megaforce", Era: "Neo Saban", Members: 5, Link: "megaforce.html" },
-            { Name: "Super Megaforce", Era: "Neo Saban", Members: 6, Link: "super-megaforce.html" }
+            { Name: "Super Megaforce", Era: "Neo Saban", Members: 6, Link: "supermegaforce.html" }
         ];
 
         const writeTableRow = (table, team) => {
             const newRow = table.insertRow();
             newRow.innerHTML = `
-                <td><a href="/teams/${team.Link}">${team.Name}</a></td>
-                <td>${team.Era}</td>
-                <td>${team.Members}</td>
+            <td><a href="/Teams/${team.Link}">${team.Name}</a></td>
+            <td>${team.Era}</td>
+            <td>${team.Members}</td>
             `;
         };
 
