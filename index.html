@@ -4,37 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon2.ico">
+    <meta name="description" content="Welcome to our Power Rangers fan site, where you can explore all the different teams from the iconic show. Learn about their unique powers and adventures.">
     <title>
-        Homepage
+        Main Page
     </title>
     <link rel="stylesheet" href="styles2.css" />
     </link>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
-      <div id="mainpage">
-        <a href="/" aria-current="page">Main Page</a>
-      </div>
-      <div class="box1start">
-        <a href="/teams.html">Teams</a>
-      <a href="/old.html">Old homepage</a>
-      <a href="/contactpage.html">Contact Me</a>
-      </div>
-      <!-- <a href="/teams.html">Teams</a> 
+        <div id="mainpage">
+            <a href="/" aria-current="page">Main Page</a>
+        </div>
+        <div class="box1start">
+            <a href="/teams.html">Teams</a>
+            <a href="/old.html">Old Homepage</a>
+            <a href="/contactpage.html">Contact Me</a>
+        </div>
+        <!-- <a href="/teams.html">Teams</a> 
       <a href="/old.html">Old homepage</a> -->
     </nav>
 
-    <!-- Welcome Section -->
     <div class="container">
         <div id="welcome">
-            <h1 class="titlewelcome">WELCOME</h1>
+            <h1 class="titlewelcome"> WELCOME
+            </h1>
             <div>
                 <p> Here, you can learn about each team and its history! </p>
             </div>
             <div class="buttonteams">
-                <a href="teams.html">Go to Teams</a> 
+                <a href="teams.html">Go to Teams</a>
             </div>
         </div>
         <!-- <div>
@@ -43,28 +43,40 @@
         <div class="buttonteams">
             <a href="teams.html">Go to Teams</a> 
         </div> -->
+        <section>
+            <h2>Stay Updated on Power Rangers</h2>
+            <p>Sign up to get the latest updates, news, and exclusive content!</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
     </div>
 </body>
 
-    <!-- Dark Mode Toggle -->
-    <label for="darkModeToggle">
-        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()"> Enable Dark Mode
-    </label>
+<label for="darkModeToggle">
+    <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()"> Enable Dark Mode
+</label>
 
-    <script>
-        let isDarkMode = false;
+<script>
+    let isDarkMode = false;
 
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            const body = document.body;
-            if (isDarkMode) {
-                body.style.backgroundColor = "black";
-                body.style.color = "white";
-            } else {
-                body.style.backgroundColor = "white";
-                body.style.color = "black";
-            }
+    function toggleDarkMode() {
+        isDarkMode = !isDarkMode;
+        const body = document.body;
+        if (isDarkMode) {
+            body.style.backgroundColor = "black";
+            body.style.color = "white";
+        } else {
+            body.style.backgroundColor = "white";
+            body.style.color = "black";
         }
-    </script>
+    }
+</script>
+<div>
+    <img src="/images/hurricane red_processed.jpg" class="bottom-right-image">
+</div>
 </body>
+
 </html>

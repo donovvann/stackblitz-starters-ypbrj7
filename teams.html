@@ -1,15 +1,46 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon2.ico">
-    <title>
-        Homepages
-    </title>
+    <title>Teams</title>
     <link rel="stylesheet" href="styles2.css" />
-    </link>
+    <meta name="description" content="Welcome to our Power Rangers fan site, where you can explore all the different teams from the iconic show. Learn about their unique powers and adventures.">
 </head>
-
+  
 <body>
+    <nav class="navbar">
+        <div id="mainpage">
+            <a href="/">Main Page</a>
+        </div>
+        <div class="box1start">
+            <a href="/teams.html" aria-current="page">Teams</a>
+            <a href="/old.html">Old Homepage</a>
+            <a href="/contactpage.html">Contact Me</a>
+        </div>
+    </nav>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y4YjOumILGs?si=uOpYWqxt7B0wfBRs"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <div>
+        <p>Select a type of team:</p>
+        <select id="types" onchange="makeTable()"></select>
+    </div>
+
+    <table id="table">
+        <thead>
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Era</b></td>
+                <td><b>Members</b></td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
     <div class="container">
         <div class="buttongoback">
             <a href="index.html">Go back</a> 
@@ -23,77 +54,62 @@
     </select>
 </div> 
 
-<script>
-    const teamType=["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"]
-    const select = document.getElementById("types");
-    teamType.forEach((type) => {
-        option = document.createElement("option");
-        option.value = type;
-        option.text = type;
-        select.appendChild(option);
-    })
-</script>
-<!-- <script>
-    const teamType = ["all", "Zordon/Post-Era", "Disney", "New Saban", "Hasbro"];
-    console.log(teamType.length)
-    console.log(teamType[0])
-    console.log(teamType[4])
-</script> -->
-<script>
-    const genretable=[{
-        Name: "RPM",
-        Era: "Disney",
-        Members: 7,
-    }, {
-        Name: "SPD",
-        Era: "Disney",
-        Members: 6,
-    }, {
-        Name: "ZEO",
-        Era: "Zordon/Post-Era",
-        Members: 6,
-    }
-    ];
-    console.log(genretable);
-</script>
-<table id="table">
-    <thead>
-        <tr>
-            <td><b>Name</b></td>
-            <td><b>Era</b></td>
-            <td><b>Members</b></td>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
-<!-- <script>
-    let a = [1, 2, 3]
-    a.forEach((i) => {
-        console.log(i);
-    });
-    </script> -->
     <script>
-    const writeTableRow = (table, genretable) => {
-        const newRow = table.insertRow();
+        const teamType = ["all", "Saban", "Disney", "Neo Saban"];
+        const select = document.getElementById("types");
+        teamType.forEach((type) => {
+            const option = document.createElement("option");
+            option.value = type;
+            option.textContent = type;
+            select.appendChild(option);
+        });
 
-        newRow.innerHTML = `<tr id=${genretable.Name}>
-            <td>${genretable.Name}</td>
-            <td>${genretable.Era}</td>
-            <td>${genretable.Members}</td>
-        </tr>`;
-    }
-const makeTable = () => {
-    const table = document.getElementsByTagName("tbody")[0];
-    table.innerHTML = "";
-    if (select.value == "all") {
-        genretable.forEach((genretable)=> { writeTableRow(table, genretable); })
-    } else {
-        console.log(select.value)
-        const filtered = genretable.filter((r) => r.Era == select.value)
-        console.log(filtered);
-        filtered.forEach((r) => writeTableRow(table, r))
-    }
-}
-    makeTable()
-</script>
+        const genretable = [
+            { Name: "Mighty Morphin", Era: "Saban", Members: 6, Link: "mighty.html" },
+            { Name: "Alien", Era: "Saban", Members: 5, Link: "alien.html" },
+            { Name: "ZEO", Era: "Saban", Members: 6, Link: "zeo.html" },
+            { Name: "Turbo", Era: "Saban", Members: 5, Link: "turbo.html" },
+            { Name: "Space", Era: "Saban", Members: 6, Link: "space.html" },
+            { Name: "Galaxy", Era: "Saban", Members: 6, Link: "galaxy.html" },
+            { Name: "Rescue", Era: "Saban", Members: 6, Link: "rescue.html" },
+            { Name: "Wild Force", Era: "Saban", Members: 6, Link: "wildforce.html" },
+            { Name: "Ninja Storm", Era: "Disney", Members: 6, Link: "ninjastorm.html" },
+            { Name: "Dino Thunder", Era: "Disney", Members: 5, Link: "dinothunder.html" },
+            { Name: "SPD", Era: "Disney", Members: 6, Link: "spd.html" },
+            { Name: "Mystic Force", Era: "Disney", Members: 6, Link: "mystic.html" },
+            { Name: "Operation Overdrive", Era: "Disney", Members: 6, Link: "overdrive.html" },
+            { Name: "Jungle Fury", Era: "Disney", Members: 5, Link: "junglefury.html" },
+            { Name: "RPM", Era: "Disney", Members: 7, Link: "rpm.html" },
+            { Name: "Samurai", Era: "Neo Saban", Members: 6, Link: "samurai.html" },
+            { Name: "Megaforce", Era: "Neo Saban", Members: 5, Link: "megaforce.html" },
+            { Name: "Super Megaforce", Era: "Neo Saban", Members: 6, Link: "supermegaforce.html" }
+        ];
+
+        const writeTableRow = (table, team) => {
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td><a href="/Teams/${team.Link}">${team.Name}</a></td>
+                <td>${team.Era}</td>
+                <td>${team.Members}</td>
+            `;
+        };
+
+        const makeTable = () => {
+            const tableBody = document.querySelector("#table tbody");
+            tableBody.innerHTML = "";
+
+            const filteredTeams = select.value === "all"
+                ? genretable
+                : genretable.filter((team) => team.Era === select.value);
+
+            filteredTeams.forEach((team) => writeTableRow(tableBody, team));
+        };
+
+        makeTable();
+    </script>
+    <div>
+        <img src="/images/hurricane red_processed.jpg" class="bottom-right-image">
+    </div>
+</body>
+
 </html>
